@@ -9,6 +9,7 @@ namespace oop1
         static void Main(string[] args)
         {
             Random pages = new Random();
+
             Book bookOne = new Book("Хлебный Остров", "Хлебович Х.Х.", pages.Next(80, 1000), false);
             Book bookTwo = new Book("Хлебная Миля", "Хлебович Х.Х.", pages.Next(80, 1000), false);
             Book bookThree = new Book("Весенний лес", "Пенькович М.С.", pages.Next(80, 1000), false);
@@ -23,9 +24,13 @@ namespace oop1
             Shelf shelfTwo = new Shelf(2);
             shelfTwo.Books.AddRange(new List<Book> {bookThree, bookFour, bookFive, bookSix, bookSeven});
 
+            BookLibrary bookLibrary = new BookLibrary();
+            bookLibrary.Shelfs.AddRange(new List<Shelf> {shelfOne, shelfTwo});
+
             shelfOne.PrintBooks();
             shelfTwo.PrintBooks();
-
+            bookLibrary.ShelfsInLibrary();
+            
             bool work = true;
 
             while (work)
