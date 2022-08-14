@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop1.Library
 {
-    class Book
+    class Book : IPrintble
     {
         public string Name;
         public string Author;
@@ -21,7 +21,13 @@ namespace oop1.Library
 
         public void PrintInfo()
         {
-            Console.WriteLine($"[{Name}] | [{Author}] | [{Pages}] | [{Locked}]");
+            if (Locked)
+            {
+                Console.WriteLine("Книга недоступна.");
+                return;
+            }
+
+            Console.WriteLine($"[{Name}] | [{Author}] | [{Pages}]");
         }
     }
 }

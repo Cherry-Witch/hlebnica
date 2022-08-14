@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop1.Library
 {
-    class Shelf
+    class Shelf : IPrintble
     {
         public int Number;
         public List<Book> Books;
@@ -17,7 +17,7 @@ namespace oop1.Library
             Number = number;
         }
 
-        public void PrintBooks()
+        public void PrintInfo()
         {
             Console.Write($"Шкаф № {Number} — ");
             foreach (var book in Books)

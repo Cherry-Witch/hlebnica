@@ -24,34 +24,66 @@ namespace oop1
             Shelf shelfTwo = new Shelf(2);
             shelfTwo.Books.AddRange(new List<Book> {bookThree, bookFour, bookFive, bookSix, bookSeven});
 
-            BookLibrary bookLibrary = new BookLibrary();
+            BookLibrary bookLibrary = new BookLibrary("Ул. Пушкина, Дом Колотушкина");
+            bookLibrary.Name = "Хлебная Библеотека";
             bookLibrary.Shelfs.AddRange(new List<Shelf> {shelfOne, shelfTwo});
 
-            shelfOne.PrintBooks();
-            shelfTwo.PrintBooks();
-            bookLibrary.ShelfsInLibrary();
+            List<IPrintble> printble = new List<IPrintble>
+            {
+                shelfOne,shelfTwo,bookLibrary
+            };
+
+            for (int i = 0; i < printble.Count; i++)
+            {
+                printble[i].PrintInfo();
+            }
             
             bool work = true;
 
             while (work)
             {
+                Console.Write("Введите номер шкафа: ");
                 string input = Console.ReadLine();
 
                 int output;
 
                 if (int.TryParse(input, out output))
                 {
-                    shelfOne.Books[output].PrintInfo();
+                    if (output < bookLibrary.ShelfCount)
+                    {
+                        Shelf currentShelf = bookLibrary.Shelfs[output];
+                        currentShelf.PrintInfo();
+                        Console.Write("Введите номер книги: ");
+                        input = Console.ReadLine();
+                        if (int.TryParse(input, out output))
+                        {
+                            if (output < currentShelf.BooksCount)
+                            {
+                                Book currentBook = currentShelf.Books[output];
+                                currentBook.PrintInfo();
+                                Console.WriteLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Ну нет такой книги с таким номером!");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Нужно ввести число.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Нет полки с таким номером.");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Введите корректное число.");
+                    Console.WriteLine("Нужно ввести число.");
                 }
 
-                work = input == "stop";
-
-
-                Console.WriteLine("Привет мир!");
+                work = input != "stop";
             }
 
         }
