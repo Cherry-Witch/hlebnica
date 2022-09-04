@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Хлебная Библеотека</Name>
+  <Shelfs>
+    <Shelf>
+      <Number>1</Number>
+      <Books>
+        <Book>
+          <Name>Хлебный Остров</Name>
+          <Author>Хлебович Х.Х.</Author>
+          <Pages>753</Pages>
+          <Locked>false</Locked>
+        </Book>
+        <Book>
+          <Name>Хлебная Миля</Name>
+          <Author>Хлебович Х.Х.</Author>
+          <Pages>700</Pages>
+          <Locked>false</Locked>
+        </Book>
+		<Book>
+          <Name>Shit Stains</Name>
+          <Author>Антон Г.</Author>
+          <Pages>1488</Pages>
+          <Locked>false</Locked>
+        </Book>
+      </Books>
+    </Shelf>
+    <Shelf>
+      <Number>2</Number>
+      <Books>
+        <Book>
+          <Name>Весенний лес</Name>
+          <Author>Пенькович М.С.</Author>
+          <Pages>115</Pages>
+          <Locked>false</Locked>
+        </Book>
+        <Book>
+          <Name>Зимний барабан</Name>
+          <Author>Лерой Р.Т.</Author>
+          <Pages>157</Pages>
+          <Locked>false</Locked>
+        </Book>
+        <Book>
+          <Name>Пикник за школой</Name>
+          <Author>Тиджей А.С.</Author>
+          <Pages>471</Pages>
+          <Locked>false</Locked>
+        </Book>
+        <Book>
+          <Name>Домашний кот</Name>
+          <Author>Некоарк Г.Н.</Author>
+          <Pages>685</Pages>
+          <Locked>false</Locked>
+        </Book>
+        <Book>
+          <Name>Крутящее общество</Name>
+          <Author>Бериевский Н.Н.</Author>
+          <Pages>182</Pages>
+          <Locked>true</Locked>
+        </Book>
+      </Books>
+    </Shelf>
+  </Shelfs>
+</Library>
