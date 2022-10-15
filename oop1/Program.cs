@@ -46,6 +46,25 @@ namespace oop1
             return currentShelf.Books[output];
         }
 
+        static Book SearchByName(Library.Library library)
+        {
+            Console.Write("Введите название книги: ");
+            string bookName = Console.ReadLine();
+
+            foreach (var shelf in library.Shelfs)
+            {
+                foreach (var book in shelf.Books)
+                {
+                    if (book.Name.ToLower().IndexOf(bookName) >= 0)
+                    {
+                        return book;
+                    }
+                }
+            }
+
+            return null;
+        }
+
         static void Main(string[] args)
         {
             Library.Library bookLibrary = LibraryParser.LoadLibrary();
@@ -59,6 +78,12 @@ namespace oop1
                 switch (input)
                 {
                     case "autosearch":
+                        selectedBook = SearchByName(bookLibrary);
+                        if (selectedBook != null)
+                        {
+                            selectedBook.PrintInfo();
+                        }
+
                         break;
                     case "search":
                         selectedBook = ManualSearch(bookLibrary);
@@ -74,9 +99,7 @@ namespace oop1
                     default:
                         break;
                 }
-
             }
-
         }
     }
 }
