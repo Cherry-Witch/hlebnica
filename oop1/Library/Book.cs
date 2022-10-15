@@ -4,12 +4,17 @@ using System.Text;
 
 namespace oop1.Library
 {
-    class Book : IPrintble
+    public class Book : IPrintble
     {
         public string Name;
         public string Author;
         public int Pages;
         public bool Locked;
+
+        private Book()
+        {
+
+        }
 
         public Book(string name, string author, int pages, bool locked)
         {

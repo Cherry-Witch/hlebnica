@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop1.Library
 {
-    class Shelf : IPrintble
+    public class Shelf : IPrintble
     {
         public int Number;
         public List<Book> Books;
@@ -15,6 +15,11 @@ namespace oop1.Library
         {
             Books = new List<Book>();
             Number = number;
+        }
+
+        private Shelf()
+        {
+
         }
 
         public void PrintInfo()
